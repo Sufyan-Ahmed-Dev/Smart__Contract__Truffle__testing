@@ -3,7 +3,6 @@ pragma solidity >=0.4.22 <0.9.0;
 // contracts/Box.sol
 contract Box {
     uint256 private _value;
-
     // Emitted when the stored value changes
     event ValueChanged(uint256 value);
 
