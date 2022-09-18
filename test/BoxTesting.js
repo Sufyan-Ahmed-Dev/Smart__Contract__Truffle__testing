@@ -1,26 +1,15 @@
 const BoxContract = artifacts.require("Box");
 
 contract("Box Contract" , () => {
-    it(" it should retuen a store func", async () => {
+    it(" it should  work like set+ get both", async () => {
         const boxContract = await BoxContract.deployed();
-        const result = await boxContract.store(70); // Working Good
-        // console.log(typeof result.toNumber());
-        // const check = await result.store;
-        // console.log(check)
+        await boxContract.store(1900); // set value
+        const result = await boxContract.retrieve(); // get value
 
-        // console.log(result);
-        // assert(result === typeof(number));
-
-    });
-
-    it(" it should return retrieve func ", async () => {
-        const boxContract = await BoxContract.deployed();
-        const result = await boxContract.retrieve();
+        // console.log(result.toNumber());// set/get value on console
         
-
-        console.log(result.toNumber());
+        assert(result.toNumber() === 1900); // this value check is it equal or not 
         
-
     });
 
 })
